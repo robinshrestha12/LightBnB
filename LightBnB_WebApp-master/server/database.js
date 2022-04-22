@@ -96,7 +96,7 @@ const getAllReservations = function(guest_id, limit = 10) {
   GROUP BY properties.id, reservations.id
   ORDER BY reservations.start_date
   LIMIT $2`;
-  console.log("guest id", guest_id);
+  
   return pool
     .query(queryGetAllReservations, [Number(guest_id), limit]
     ).then((result)=>{      
