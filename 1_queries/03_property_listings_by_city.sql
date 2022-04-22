@@ -1,3 +1,5 @@
+-- Property Listings by City
+
 SELECT properties.id, title, cost_per_night, avg(property_reviews.rating) as average_rating
 FROM properties
 LEFT JOIN property_reviews ON property_reviews.property_id = properties.id

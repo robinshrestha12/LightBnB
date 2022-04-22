@@ -1,3 +1,5 @@
+--Inserting own data, five rows on each table
+
 INSERT INTO users (name, email, password) VALUES
 ('Robin Sh', 'robintv12@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'),
 ('Manual Kash', 'manual@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'),

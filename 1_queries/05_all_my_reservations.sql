@@ -1,3 +1,5 @@
+-- Show all reservations for a user
+
 SELECT reservations.id as id, properties.title as title, properties.cost_per_night as cost_per_night, reservations.start_date as start_date,  avg(property_reviews.rating) as average_rating
 FROM properties
 JOIN reservations on reservations.property_id = properties.id
