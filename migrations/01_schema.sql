@@ -1,14 +1,19 @@
+-- Database schema
+-- Drop tables if already exist
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS properties CASCADE;
 DROP TABLE IF EXISTS reservations CASCADE;
 DROP TABLE IF EXISTS property_reviews CASCADE;
 
+--creating table users
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL
 );
+
+--creating table properties
 CREATE TABLE properties (
   id SERIAL PRIMARY KEY NOT NULL,
   owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
@@ -30,6 +35,8 @@ CREATE TABLE properties (
 
   active BOOLEAN NOT NULL DEFAULT TRUE
 );
+
+--creating table reservations
 CREATE TABLE reservations (
   id SERIAL PRIMARY KEY NOT NULL,
   start_date DATE NOT NULL,
@@ -37,6 +44,8 @@ CREATE TABLE reservations (
   property_id INTEGER REFERENCES properties(id) ON DELETE CASCADE,
   guest_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
+
+--creating table property_reviews
 CREATE TABLE property_reviews (
   id SERIAL PRIMARY KEY NOT NULL,
   guest_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
